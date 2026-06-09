@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kingdom Serviços LTDA — Serviços técnicos, reformas e manutenção predial | AL · SE · PE</title>
+<meta name="description" content="A Kingdom Serviços LTDA executa serviços técnicos, reformas, manutenções e adequações em ambientes corporativos, comerciais e prediais. Sede em Maceió/AL, atendimento em Alagoas, Sergipe e Pernambuco.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M10 6h44v36L32 58 10 42z" fill="%23142E50"/><text x="32" y="40" font-family="Arial Black,Arial" font-size="30" font-weight="900" fill="white" text-anchor="middle">K</text><path d="M18 44l14 10 14-10-3 6-11 8-11-8z" fill="%23B8923A"/></svg>'>
+<style>
+:root{
+  --navy:#142E50; --navy-2:#0E2240; --navy-3:#1C3D67;
+  --gold:#B8923A; --gold-2:#D2B065; --gold-soft:#E8DCBE;
+  --cream:#F3F0E8; --cream-2:#EBE7DC;
+  --ink:#22303F; --ink-soft:#54616F;
+  --white:#FFFFFF;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(14,34,64,.10);
+  --display:'Oswald',sans-serif;
+  --body:'Source Sans 3',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* ---------- blueprint motif ---------- */
+.blueprint{position:relative;overflow:hidden}
+.blueprint::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background-image:
+    linear-gradient(rgba(20,46,80,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(20,46,80,.045) 1px,transparent 1px);
+  background-size:56px 56px;}
+
+/* ---------- header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--navy);box-shadow:0 2px 14px rgba(0,0,0,.22)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{width:40px;height:40px;flex:none}
+.brand-name{font-family:var(--display);font-weight:700;letter-spacing:.14em;color:#fff;font-size:1.06rem;line-height:1.1}
+.brand-name small{display:block;font-family:var(--body);font-weight:600;font-size:.6rem;letter-spacing:.34em;color:var(--gold-2)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:#E8EDF5;font-weight:600;font-size:.92rem;letter-spacing:.02em;position:relative;padding:6px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold-2);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.84rem;padding:13px 24px;border-radius:8px;transition:transform .18s,box-shadow .18s,background .18s;cursor:pointer;border:0}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#A57F2C;transform:translateY(-2px);box-shadow:0 8px 20px rgba(184,146,58,.35)}
+.btn-outline{border:1.5px solid var(--navy);color:var(--navy);background:transparent}
+.btn-outline:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
+.nav .btn{padding:10px 18px}
+.menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.menu-toggle span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:.3s}
+
+/* ---------- hero ---------- */
+.hero{background:var(--cream);padding:160px 0 90px;position:relative}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--navy) 0 60%,var(--gold) 60% 100%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;position:relative;z-index:1}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.32em;text-transform:uppercase;font-size:.78rem;color:var(--gold);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--gold)}
+h1{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);font-size:clamp(2.3rem,5vw,3.7rem);line-height:1.08;margin:18px 0 8px}
+h1 .gold{color:var(--gold)}
+.hero-sub{font-size:1.13rem;color:var(--ink-soft);max-width:540px;margin:14px 0 30px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-states{margin-top:42px;display:flex;gap:0;align-items:center;font-family:var(--display);font-weight:600;letter-spacing:.22em;font-size:.82rem;color:var(--navy);text-transform:uppercase}
+.hero-states span{padding:0 16px;border-left:2px solid var(--gold)}
+.hero-states span:first-child{border-left:0;padding-left:0}
+.hero-visual{position:relative;display:flex;flex-direction:column;gap:16px}
+.hero-visual .main{border-radius:var(--radius);box-shadow:var(--shadow);border:4px solid #fff;aspect-ratio:16/8;height:auto;object-fit:cover;width:100%}
+.hero-card{position:absolute;left:-34px;bottom:-26px;background:var(--navy);color:#fff;border-radius:12px;padding:18px 22px;box-shadow:var(--shadow);display:flex;gap:16px;align-items:center}
+.hero-card .num{font-family:var(--display);font-weight:700;font-size:2rem;color:var(--gold-2);line-height:1}
+.hero-card p{font-size:.82rem;letter-spacing:.06em;line-height:1.35;max-width:160px}
+
+/* ---------- sections ---------- */
+section{padding:88px 0}
+.sec-head{margin-bottom:46px;max-width:720px}
+h2{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--navy);font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.15;padding-bottom:14px;position:relative;margin-top:14px}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:88px;height:3px;background:var(--gold)}
+.sec-head p{color:var(--ink-soft);margin-top:14px;font-size:1.06rem}
+
+/* quem somos */
+.about{background:#fff}
+.about-grid{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start}
+.year-block{background:var(--cream);border:1px solid var(--cream-2);border-radius:var(--radius);padding:34px;text-align:left;position:sticky;top:100px}
+.year-block .year{font-family:var(--display);font-weight:700;font-size:3.4rem;color:var(--gold);line-height:1}
+.year-block .lbl{font-weight:700;color:var(--navy);margin-top:8px}
+.year-block .sub{font-size:.92rem;color:var(--ink-soft)}
+.year-block hr{border:0;border-top:2px solid var(--gold);width:42px;margin:18px 0}
+.about-text p{margin-bottom:18px;color:var(--ink)}
+.about-text strong{color:var(--navy)}
+
+/* mvv */
+.mvv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border:1px solid var(--cream-2);border-radius:var(--radius);padding:32px 28px;box-shadow:0 4px 18px rgba(14,34,64,.05);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.card .icon{width:52px;height:52px;border-radius:12px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.card .icon svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.8}
+.card h3{font-family:var(--display);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-size:1.05rem;margin-bottom:10px}
+.card p,.card li{color:var(--ink-soft);font-size:.97rem}
+.card ul li{padding:5px 0 5px 20px;position:relative}
+.card ul li::before{content:"";position:absolute;left:0;top:13px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+
+/* especialidades */
+.spec{background:var(--navy);color:#fff}
+.spec h2{color:#fff}
+.spec .sec-head p{color:#B9C6D8}
+.spec .eyebrow{color:var(--gold-2)}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.spec-item{background:var(--navy-3);border:1px solid rgba(210,176,101,.22);border-radius:12px;padding:22px 24px;display:flex;gap:16px;align-items:flex-start;transition:background .2s,transform .2s}
+.spec-item:hover{background:#234a7c;transform:translateY(-3px)}
+.spec-item svg{width:24px;height:24px;flex:none;stroke:var(--gold-2);fill:none;stroke-width:1.8;margin-top:2px}
+.spec-item span{font-weight:600;font-size:.98rem;line-height:1.4}
+
+/* metodologia */
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{background:#fff;border:1px solid var(--cream-2);border-radius:var(--radius);padding:30px 26px;position:relative;overflow:hidden}
+.step::before{counter-increment:step;content:"0" counter(step);position:absolute;right:14px;top:6px;font-family:var(--display);font-weight:700;font-size:3.6rem;color:var(--cream-2);line-height:1}
+.step .n{display:inline-flex;width:42px;height:42px;border-radius:10px;background:var(--navy);color:var(--gold-2);font-family:var(--display);font-weight:700;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:16px}
+.step p{position:relative;font-weight:600;color:var(--navy);line-height:1.45}
+.steps-note{margin-top:30px;padding:18px 24px;border-left:4px solid var(--gold);background:#fff;border-radius:0 10px 10px 0;font-weight:600;color:var(--navy)}
+
+/* diferenciais */
+.dif{background:#fff}
+.dif-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.dif-grid h3{color:var(--gold);font-size:1rem}
+.dif-grid .card{background:var(--cream)}
+
+/* projetos */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.tab{font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;padding:11px 20px;border-radius:50px;border:1.5px solid var(--navy);background:transparent;color:var(--navy);cursor:pointer;transition:.2s}
+.tab:hover{background:rgba(20,46,80,.07)}
+.tab.active{background:var(--navy);color:#fff}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gallery figure{border-radius:12px;overflow:hidden;position:relative;cursor:pointer;border:3px solid #fff;box-shadow:0 4px 16px rgba(14,34,64,.10);aspect-ratio:16/9;background:var(--navy)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(14,34,64,.88));color:#fff;font-size:.82rem;font-weight:600;letter-spacing:.04em;padding:26px 14px 10px;opacity:0;transition:opacity .25s}
+.gallery figure:hover figcaption{opacity:1}
+.gal-tags{margin-top:26px;background:var(--navy);border-radius:10px;color:#fff;display:flex;flex-wrap:wrap;gap:8px 30px;padding:16px 24px;font-size:.9rem;font-weight:600;letter-spacing:.04em}
+.gal-tags span{display:flex;align-items:center;gap:9px}
+.gal-tags span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold-2)}
+
+/* before-after */
+.ba-wrap{margin-top:60px}
+.ba-wrap h3{font-family:var(--display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-size:1.35rem;margin-bottom:6px}
+.ba-wrap>p{color:var(--ink-soft);margin-bottom:24px;max-width:640px}
+.ba{position:relative;max-width:860px;border-radius:var(--radius);overflow:hidden;border:4px solid #fff;box-shadow:var(--shadow);user-select:none;touch-action:none;aspect-ratio:9/5;background:#000}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .after-img{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;background:var(--gold-2);transform:translateX(-50%);cursor:ew-resize}
+.ba .handle::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.ba .tag{position:absolute;top:14px;font-family:var(--display);font-weight:600;letter-spacing:.16em;font-size:.74rem;padding:7px 14px;border-radius:6px;color:#fff;background:rgba(14,34,64,.85)}
+.ba .tag.before{right:14px}
+.ba .tag.after{left:14px;background:var(--gold)}
+
+/* atuação */
+.area{background:var(--cream)}
+.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.area-list li{background:#fff;border:1px solid var(--cream-2);border-radius:12px;padding:20px 24px;display:flex;gap:18px;align-items:center;margin-bottom:14px;box-shadow:0 3px 12px rgba(14,34,64,.05)}
+.area-list .pin{width:44px;height:44px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex:none}
+.area-list .pin svg{width:20px;height:20px;stroke:var(--gold-2);fill:none;stroke-width:2}
+.area-list strong{font-family:var(--display);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);display:block}
+.area-list small{color:var(--ink-soft);font-size:.9rem}
+.area-banner{margin-top:10px;background:var(--navy);color:#fff;font-family:var(--display);letter-spacing:.22em;font-size:.82rem;font-weight:600;text-transform:uppercase;padding:15px 22px;border-radius:8px;text-align:center}
+
+/* contato */
+.contact{background:var(--navy);color:#fff;position:relative}
+.contact h2{color:#fff}
+.contact .eyebrow{color:var(--gold-2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-lead{font-size:1.35rem;font-family:var(--display);font-weight:600;letter-spacing:.04em;line-height:1.4;color:#E8EDF5;margin-top:10px}
+.contact-lead .gold{color:var(--gold-2)}
+.contact-sub{color:#B9C6D8;margin-top:16px;max-width:440px}
+.contact .btn-gold{margin-top:30px}
+.c-list li{display:flex;gap:18px;align-items:flex-start;background:var(--navy-3);border:1px solid rgba(210,176,101,.22);border-radius:12px;padding:18px 22px;margin-bottom:14px}
+.c-list .ic{width:42px;height:42px;border-radius:10px;background:rgba(210,176,101,.14);display:flex;align-items:center;justify-content:center;flex:none}
+.c-list svg{width:20px;height:20px;stroke:var(--gold-2);fill:none;stroke-width:1.9}
+.c-list strong{display:block;font-family:var(--display);font-weight:600;letter-spacing:.14em;font-size:.78rem;text-transform:uppercase;color:var(--gold-2);margin-bottom:2px}
+.c-list a:hover{text-decoration:underline}
+
+/* footer */
+footer{background:var(--navy-2);color:#8FA2BC;padding:34px 0;font-size:.88rem}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot .brand-name{font-size:.95rem}
+.foot .motto{font-family:var(--display);letter-spacing:.26em;text-transform:uppercase;font-size:.72rem;color:var(--gold-2)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,22,40,.92);display:none;align-items:center;justify-content:center;z-index:100;padding:30px;cursor:zoom-out}
+.lb.open{display:flex}
+.lb img{max-width:min(1100px,94vw);max-height:88vh;border-radius:10px;border:4px solid #fff}
+
+/* whatsapp float */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:70;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.3);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+
+/* reveal */
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+}
+
+/* responsive */
+@media(max-width:980px){
+  .hero-grid,.about-grid,.area-grid,.contact-grid{grid-template-columns:1fr}
+  .mvv-grid,.spec-grid,.steps{grid-template-columns:repeat(2,1fr)}
+  .dif-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .year-block{position:static;display:flex;align-items:center;gap:24px}
+  .year-block hr{display:none}
+  .hero-card{left:10px;bottom:-22px}
+  .hero{padding-top:130px}
+}
+@media(max-width:680px){
+  .nav-links{position:fixed;top:72px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px 24px 28px;gap:18px;display:none;box-shadow:0 14px 24px rgba(0,0,0,.3)}
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .mvv-grid,.spec-grid,.steps,.dif-grid,.gallery{grid-template-columns:1fr}
+  .hero-states{flex-wrap:wrap;gap:10px}
+  section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#topo" aria-label="Kingdom Serviços LTDA">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 6h44v34L32 56 10 40z" fill="none" stroke="#fff" stroke-width="3.4"/><text x="32" y="39" font-family="Arial Black,Arial" font-size="26" font-weight="900" fill="#fff" text-anchor="middle">K</text><path d="M17 42l15 11 15-11-2.6 6.4L32 58l-12.4-9.6z" fill="#D2B065"/></svg>
+      <span class="brand-name">KINGDOM<small>SERVIÇOS LTDA</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="#sobre">Quem Somos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#metodologia">Metodologia</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-gold" href="https://wa.me/5582981452619?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Kingdom%20Servi%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero blueprint" id="topo">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow reveal">Portfólio técnico corporativo</p>
+      <h1 class="reveal">Construindo<br>com <span class="gold">confiança.</span></h1>
+      <p class="hero-sub reveal">Serviços técnicos, reformas, manutenções e adequações em ambientes corporativos, comerciais e prediais — com responsabilidade, agilidade e qualidade de entrega.</p>
+      <div class="hero-ctas reveal">
+        <a class="btn btn-gold" href="https://wa.me/5582981452619?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Kingdom%20Servi%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento</a>
+        <a class="btn btn-outline" href="#projetos">Ver projetos</a>
+      </div>
+      <div class="hero-states reveal">
+        <span>Alagoas</span><span>Sergipe</span><span>Pernambuco</span>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <img class="main" src="img/reforma-1.jpg" alt="Ambiente corporativo reformado pela Kingdom Serviços" width="900" height="450">
+      <img class="main" src="img/fachada-2.jpg" alt="Fachada comercial executada pela Kingdom Serviços" width="900" height="450">
+      <div class="hero-card">
+        <span class="num">6</span>
+        <p>etapas de metodologia técnica em cada serviço</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM SOMOS -->
+<section class="about" id="sobre">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Apresentação</p>
+      <h2>Quem somos</h2>
+    </div>
+    <div class="about-grid">
+      <div class="year-block reveal">
+        <div>
+          <div class="year">2022</div>
+          <hr>
+          <div class="lbl">Empresa ativa</div>
+          <div class="sub">desde 08/11/2022</div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <p>A <strong>KINGDOM SERVIÇOS LTDA</strong> atua na execução de serviços técnicos, reformas, manutenções e adequações em ambientes corporativos, comerciais e prediais, com foco em responsabilidade, agilidade e qualidade de entrega.</p>
+        <p>Somos uma empresa de pequeno porte, constituída como Sociedade Empresária Limitada, com situação cadastral ativa e atuação principal em <strong>instalação e manutenção elétrica</strong>. Nosso escopo também abrange instalações hidráulicas, sanitárias e de gás, instalação de portas, janelas, tetos, divisórias e armários embutidos, pintura de edifícios e atividades de limpeza.</p>
+        <p>Cada projeto é conduzido com planejamento, acompanhamento técnico e organização operacional, buscando segurança, eficiência e previsibilidade do resultado. Com sede em <strong>Maceió/AL</strong>, a empresa atende regionalmente os estados de Alagoas, Sergipe e Pernambuco.</p>
+        <p><strong>Nosso propósito:</strong> construir com responsabilidade. Acreditamos que bons resultados dependem de planejamento, respeito aos prazos, transparência na execução e atenção aos detalhes de cada serviço.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MVV -->
+<section class="blueprint">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Princípios</p>
+      <h2>Missão, visão e valores</h2>
+    </div>
+    <div class="mvv-grid">
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg></div>
+        <h3>Missão</h3>
+        <p>Executar soluções técnicas, manutenções e reformas com responsabilidade, agilidade e qualidade, entregando serviços seguros, organizados e compatíveis com a necessidade de cada cliente.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Visão</h3>
+        <p>Ser reconhecida como referência em Alagoas, Sergipe e Pernambuco pela confiança, celeridade no atendimento e excelência na execução dos serviços.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M12 21L8 9l4-6 4 6z"/></svg></div>
+        <h3>Valores</h3>
+        <ul>
+          <li>Responsabilidade em cada entrega</li>
+          <li>Agilidade com planejamento</li>
+          <li>Qualidade e capricho técnico</li>
+          <li>Transparência nas relações</li>
+          <li>Segurança no trabalho</li>
+          <li>Respeito às pessoas e aos ambientes</li>
+          <li>Compromisso com o cliente</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIALIDADES -->
+<section class="spec" id="servicos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Especialidades técnicas</p>
+      <h2>Atuação preparada para múltiplas frentes de trabalho</h2>
+      <p>Serviços técnicos executados com responsabilidade, celeridade e controle de qualidade.</p>
+    </div>
+    <div class="spec-grid">
+      <div class="spec-item reveal"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Instalação e manutenção elétrica</span></div>
+      <div class="spec-item reveal"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg><span>Instalações hidráulicas, sanitárias e de gás</span></div>
+      <div class="spec-item reveal"><svg viewBox="0 0 24 24"><path d="M9 11l7-7 4 4-7 7H9zM9 11l-5 9 9-5"/></svg><span>Pintura de edifícios e estruturas em geral</span></div>
+      <div class="spec-item reveal"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></svg><span>Portas, janelas, tetos, divisórias e armários embutidos</span></div>
+      <div class="spec-item reveal"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6M5 9v11h14V9M9 20v-6h6v6"/></svg><span>Pisos, revestimentos e adequações internas</span></div>
+      <div class="spec-item reveal"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/></svg><span>Paredes de drywall e divisórias de vidro</span></div>
+      <div class="spec-item reveal"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="6" r="2.4"/><path d="M8 16.5L16 8M6 15.5V8a2 2 0 0 1 2-2h7.5"/></svg><span>Infraestrutura de lógica e telecomunicações</span></div>
+      <div class="spec-item reveal"><svg viewBox="0 0 24 24"><path d="M4 21l6-6m4-10l6 6-9 9H6v-5z"/></svg><span>Limpeza técnica e pós-obra</span></div>
+      <div class="spec-item reveal"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V8l7-5 7 5v12M9 20v-7h6v7"/></svg><span>Impermeabilização, reformas e manutenção predial</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGIA -->
+<section id="metodologia" class="blueprint">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Como trabalhamos</p>
+      <h2>Metodologia de execução</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="n">1</span><p>Recebimento da demanda e alinhamento inicial</p></div>
+      <div class="step reveal"><span class="n">2</span><p>Vistoria técnica e definição do escopo</p></div>
+      <div class="step reveal"><span class="n">3</span><p>Planejamento de equipe, materiais e cronograma</p></div>
+      <div class="step reveal"><span class="n">4</span><p>Execução com acompanhamento técnico contínuo</p></div>
+      <div class="step reveal"><span class="n">5</span><p>Verificação final, ajustes e organização do ambiente</p></div>
+      <div class="step reveal"><span class="n">6</span><p>Entrega técnica com orientação ao cliente</p></div>
+    </div>
+    <div class="steps-note reveal">Processo estruturado para garantir agilidade, controle e qualidade em cada serviço.</div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="dif">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Por que a Kingdom</p>
+      <h2>Diferenciais</h2>
+    </div>
+    <div class="dif-grid">
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div>
+        <h3>Celeridade</h3>
+        <p>Planejamento objetivo e cumprimento de etapas.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7M9.5 9l1.8 1.8L15 7.2"/></svg></div>
+        <h3>Qualidade</h3>
+        <p>Execução técnica com controle, acabamento e atenção aos detalhes.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M8.5 12l2.3 2.3L15.5 9.5"/></svg></div>
+        <h3>Responsabilidade</h3>
+        <p>Compromisso com segurança, pessoas, patrimônio e entrega final.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+        <h3>Organização</h3>
+        <p>Processos claros, acompanhamento e previsibilidade na execução.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos" class="blueprint">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Projetos executados</p>
+      <h2>Serviços em campo</h2>
+      <p>Registros reais de obras e serviços executados pela equipe Kingdom em ambientes corporativos, comerciais e prediais.</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist">
+      <button class="tab active" data-cat="imper">Impermeabilização</button>
+      <button class="tab" data-cat="reforma">Reforma corporativa</button>
+      <button class="tab" data-cat="amb">Ambientes internos</button>
+      <button class="tab" data-cat="pintura">Pintura e estruturas</button>
+      <button class="tab" data-cat="fachada">Fachadas</button>
+    </div>
+
+    <div class="gallery" id="gallery"></div>
+    <div class="gal-tags" id="galTags"></div>
+
+    <div class="ba-wrap reveal">
+      <h3>Quadro elétrico — antes e depois</h3>
+      <p>Instalação, manutenção e organização de quadros elétricos, com foco em segurança e controle. Arraste para comparar.</p>
+      <div class="ba" id="ba" style="--pos:50%">
+        <img src="img/quadro-antes.jpg" alt="Quadro elétrico antes da intervenção">
+        <img class="after-img" src="img/quadro-depois.jpg" alt="Quadro elétrico depois: organizado e identificado">
+        <span class="tag after">Depois</span>
+        <span class="tag before">Antes</span>
+        <div class="handle" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÁREA DE ATUAÇÃO -->
+<section class="area">
+  <div class="wrap area-grid">
+    <div class="reveal">
+      <p class="eyebrow">Onde atuamos</p>
+      <h2>Área de atuação</h2>
+      <p style="margin-top:16px;color:var(--ink-soft)">Atuação regional com logística estruturada, planejamento técnico e organização operacional para atendimento em múltiplas frentes de trabalho.</p>
+    </div>
+    <div class="reveal">
+      <ul class="area-list">
+        <li><span class="pin"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span><strong>Alagoas</strong><small>Sede em Maceió/AL</small></span></li>
+        <li><span class="pin"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span><strong>Sergipe</strong><small>Atendimento regional</small></span></li>
+        <li><span class="pin"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span><strong>Pernambuco</strong><small>Atendimento regional</small></span></li>
+      </ul>
+      <div class="area-banner">Atendimento em AL, SE e PE</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Contato</p>
+        <h2>Compromisso técnico. Resultado consistente.</h2>
+        <p class="contact-sub">A KINGDOM SERVIÇOS LTDA atua com foco em responsabilidade, agilidade e qualidade, buscando entregar soluções técnicas seguras, organizadas e compatíveis com a necessidade de cada cliente.</p>
+        <a class="btn btn-gold" href="https://wa.me/5582981452619?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Kingdom%20Servi%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+      <ul class="c-list reveal">
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
+          <span><strong>CNPJ</strong>48.555.399/0001-01</span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+          <span><strong>Telefone</strong><a href="tel:+5582981452619">(82) 98145-2619</a> &nbsp;|&nbsp; <a href="tel:+5582999529968">(82) 99952-9968</a></span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span><strong>E-mail</strong><a href="mailto:kingdomservicosltda@gmail.com">kingdomservicosltda@gmail.com</a></span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+          <span><strong>Endereço</strong>Av. Santa Ana, 58 · Serraria · Maceió/AL</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span class="brand-name" style="color:#fff">KINGDOM<small style="color:var(--gold-2)">SERVIÇOS LTDA</small></span>
+    <span class="motto">Construindo com confiança</span>
+    <span>© <span id="yy"></span> Kingdom Serviços LTDA · CNPJ 48.555.399/0001-01 · Maceió/AL</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5582981452619?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Kingdom%20Servi%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4 29l7.3-2.3c1.9 1 3.8 1.5 4.7 1.5 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm6.9 16.9c-.3.8-1.7 1.6-2.4 1.7-.6.1-1.4.1-2.2-.1-.5-.2-1.2-.4-2-.8-3.6-1.5-5.9-5.1-6.1-5.4-.2-.2-1.4-1.9-1.4-3.6s.9-2.6 1.2-2.9c.3-.3.7-.4 1-.4h.7c.2 0 .5-.1.8.6.3.8 1 2.6 1.1 2.8.1.2.1.4 0 .6-.1.2-.2.4-.4.6l-.6.7c-.2.2-.4.4-.2.8.2.3 1 1.6 2.1 2.6 1.4 1.3 2.7 1.7 3 1.9.4.2.6.2.8-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.2 1.7z"/></svg>
+</a>
+
+<div class="lb" id="lb"><img id="lbImg" src="" alt=""></div>
+
+<script>
+// ---- gallery data ----
+const GALLERY = {
+  imper: {
+    desc: 'Impermeabilização de laje — proteção, estanqueidade e durabilidade para coberturas e áreas expostas.',
+    tags: ['preparo da superfície','aplicação técnica','tratamento de pontos críticos','controle de execução'],
+    imgs: [
+      ['img/imper-1.jpg','Preparo da superfície da laje'],
+      ['img/imper-2.jpg','Aplicação de manta asfáltica'],
+      ['img/imper-3.jpg','Cobertura impermeabilizada'],
+      ['img/imper-4.jpg','Tratamento de pontos críticos'],
+      ['img/imper-5.jpg','Aplicação de manta em execução'],
+    ]
+  },
+  reforma: {
+    desc: 'Reforma geral corporativa — pintura, piso vinílico, infraestruturas, elétrica, lógica, drywall, móveis e divisórias de vidro.',
+    tags: ['ambientes corporativos','piso vinílico','divisórias e vidro','infraestrutura lógica'],
+    imgs: [
+      ['img/reforma-1.jpg','Estações de trabalho montadas'],
+      ['img/reforma-2.jpg','Acabamento com piso vinílico'],
+      ['img/reforma-3.jpg','Sala de reunião finalizada'],
+      ['img/reforma-4.jpg','Divisórias de vidro instaladas'],
+      ['img/reforma-5.jpg','Circulação com divisórias e jardim'],
+      ['img/reforma-6.jpg','Banheiro adequado e finalizado'],
+    ]
+  },
+  amb: {
+    desc: 'Ambientes internos e acessibilidade — adequações internas, banheiros, divisórias, acabamento e montagem de ambientes.',
+    tags: ['acabamento limpo','layout funcional','adaptação de espaços','entrega organizada'],
+    imgs: [
+      ['img/amb-1.jpg','Sala individual com acabamento limpo'],
+      ['img/amb-2.jpg','Salas com divisórias de vidro'],
+      ['img/amb-3.jpg','Circulação interna finalizada'],
+      ['img/amb-4.jpg','Banheiro acessível adequado'],
+      ['img/amb-5.jpg','Sinalização de acessibilidade'],
+      ['img/amb-6.jpg','Montagem de mobiliário'],
+    ]
+  },
+  pintura: {
+    desc: 'Pintura de plataforma e tratamento de ferro — tratamento, recuperação e pintura de estruturas e áreas técnicas.',
+    tags: ['tratamento de ferro','pintura técnica','proteção da estrutura','melhoria visual'],
+    imgs: [
+      ['img/pintura-1.jpg','Tratamento de estrutura metálica'],
+      ['img/pintura-2.jpg','Fachada de edifício em recuperação'],
+      ['img/pintura-3.jpg','Pintura em altura'],
+      ['img/pintura-4.jpg','Edifício com pintura finalizada'],
+      ['img/pintura-5.jpg','Fachada comercial recuperada'],
+      ['img/pintura-6.jpg','Agência bancária finalizada'],
+    ]
+  },
+  fachada: {
+    desc: 'Mudança de layout com pintura da fachada — adequação visual, padronização, pintura e reorganização de layout externo.',
+    tags: ['fachadas comerciais','mudança de layout','pintura externa','padronização visual'],
+    imgs: [
+      ['img/fachada-1.jpg','Fachada padronizada'],
+      ['img/fachada-2.jpg','Fachada de agência bancária'],
+      ['img/fachada-3.jpg','Layout externo reorganizado'],
+      ['img/fachada-4.jpg','Fachada comercial finalizada'],
+    ]
+  }
+};
+
+const gal = document.getElementById('gallery');
+const tagsBox = document.getElementById('galTags');
+const lb = document.getElementById('lb');
+const lbImg = document.getElementById('lbImg');
+
+function renderCat(cat){
+  const data = GALLERY[cat];
+  gal.innerHTML = data.imgs.map(([src,alt]) =>
+    `<figure tabindex="0" data-src="${src}"><img src="${src}" alt="${alt}" loading="lazy"><figcaption>${alt}</figcaption></figure>`
+  ).join('');
+  tagsBox.innerHTML = data.tags.map(t=>`<span>${t}</span>`).join('');
+  gal.querySelectorAll('figure').forEach(f=>{
+    const open = ()=>{ lbImg.src = f.dataset.src; lb.classList.add('open'); };
+    f.addEventListener('click', open);
+    f.addEventListener('keydown', e=>{ if(e.key==='Enter') open(); });
+  });
+}
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    renderCat(t.dataset.cat);
+  });
+});
+renderCat('imper');
+lb.addEventListener('click', ()=>lb.classList.remove('open'));
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open'); });
+
+// ---- before/after slider ----
+const ba = document.getElementById('ba');
+function setPos(clientX){
+  const r = ba.getBoundingClientRect();
+  let p = (clientX - r.left)/r.width*100;
+  p = Math.max(2, Math.min(98, p));
+  ba.style.setProperty('--pos', p+'%');
+}
+let dragging = false;
+ba.addEventListener('pointerdown', e=>{ dragging=true; setPos(e.clientX); ba.setPointerCapture(e.pointerId); });
+ba.addEventListener('pointermove', e=>{ if(dragging) setPos(e.clientX); });
+ba.addEventListener('pointerup', ()=>dragging=false);
+ba.addEventListener('pointercancel', ()=>dragging=false);
+
+// ---- scroll reveal ----
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ---- misc ----
+document.getElementById('yy').textContent = new Date().getFullYear();
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open')));
+</script>
+</body>
+</html>
